@@ -16,5 +16,12 @@ namespace VindBeregner
         {
             InitializeComponent();
         }
+
+        private void btnUdregn_Click(object sender, EventArgs e)
+        {
+            VindMoellerBeregner p = new VindMoellerBeregner();
+            var result = p.MegaWatt((double)numVindstyrke.Value, (double)numMaxEffekt.Value);
+            txtResultat.Text = result.ToString("N2");
+        }
     }
 }
